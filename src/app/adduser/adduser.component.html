@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Basic Elements | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+    <app-header></app-header>
+
+<!-- removeNotificationModal -->
+<div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="NotificationModalbtn-close"></button>
+            </div>
+         
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+        <!-- ========== App Menu ========== -->
+       <app-menu></app-menu>
+        
+        <div class="vertical-overlay"></div>
+
+        
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                   
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">User</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);" routerLink="/home">Useristrateur</a></li>
+                                        <li class="breadcrumb-item active">Ajouter User</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row justify-content-center align-items-center"  >
+                     
+                        <div class="col-lg-9" >
+                            <div class="card ">
+                                <div class="card-header align-items-center d-flex" >
+                                    <h4 class="card-title mb-0 flex-grow-1">
+                                        Ajouter User
+                                    </h4>
+                                </div>
+                                 
+                                
+                                <!-- end card header -->
+                                <div class="card-body">
+                                    <div class="live-preview">
+                                     <form (ngSubmit)="addNewUser()"[formGroup]="UserForm">
+                                        <div class="row gy-4 justify-content-center align-items-center" >
+                                            <div class="col-xxl-8 col-md-6 ">
+                                                <div>
+                                                    <label for="basiInput" class="form-label">Nom</label>
+                                                    <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom" [ngClass]="{'invalid-input': UserForm.get('nom').invalid && (UserForm.get('nom').dirty || UserForm.get('nom').touched)}">
+                                                    <div *ngIf="nom?.touched && nom?.invalid">
+                                                        <small class="text-danger" *ngIf="nom?.errors?.['required']">nom 
+                                                            est obligatoire</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                           
+                                            <!--end col-->
+                                            <div class="col-xxl-8 col-md-6">
+                                                <div>
+                                                    <label for="prenom" class="form-label">Prenom</label>
+                                                    <input type="text" class="form-control" id="prenom" placeholder="Prenom" formControlName="prenom" [ngClass]="{'invalid-input': UserForm.get('prenom').invalid && (UserForm.get('prenom').dirty || UserForm.get('prenom').touched)}">
+                                                    <div *ngIf="prenom?.touched && prenom?.invalid">
+                                                        <small class="text-danger" *ngIf="prenom?.errors?.['required']">prenom
+                                                            est obligatoire</small>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                           
+                                            <!--end col-->
+                                            <div class="col-xxl-8 col-md-6">
+                                                <div>
+                                                    <label for="disabledInput" class="form-label">  Email</label>
+                                                    <input type="email" class="form-control" id="disabledInput"  placeholder="Email" formControlName="email" [ngClass]="{'invalid-input': UserForm.get('email').invalid && (UserForm.get('email').dirty || UserForm.get('email').touched)}">
+                                                    <div *ngIf="email?.touched && email?.invalid">
+                                                        <small class="text-danger" *ngIf="email?.errors?.['required']">email 
+                                                            est obligatoire
+                                                        </small>
+                                                        <small class="text-danger" *ngIf="email?.errors?.['pattern'] || email?.errors?.['email'] ">respecter le format d'email</small>      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                           
+                                           
+                                            <div class="col-xxl-8 col-md-6">
+                                                <div>
+                                                    <label for="exampleInputtime" class="form-label">Mot de passe</label>
+                                                    <input type="password" class="form-control" id="exampleInputtime" placeholder="Mot de passe" formControlName="password" [ngClass]="{'invalid-input': UserForm.get('password').invalid && (UserForm.get('password').dirty || UserForm.get('password').touched)}">
+                                                    <div *ngIf="password?.touched && password?.invalid">
+                                                        <small class="text-danger" *ngIf="password?.errors?.['required']">mot de passe 
+                                                            est obligatoire</small>
+                                                      </div>
+                                                </div>
+                                            </div>
+
+                                         <!--end col-->
+                                            <div class="col-xxl-8 col-md-6">
+                                                <div>
+                                                    <label for="role" class="form-label">Role</label>
+                                                    <input type="text" class="form-control" id="role" placeholder="Role" formControlName="Role" [ngClass]="{'invalid-input': UserForm.get('role').invalid && (UserForm.get('role').dirty || UserForm.get('role').touched)}">
+                                                    <div *ngIf="role?.touched && role?.invalid">
+                                                        <small class="text-danger" *ngIf="role?.errors?.['required']">role
+                                                            est obligatoire</small>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+
+
+                                           
+                                            <!--end col-->
+                                            
+                                            <div class="col-12 d-flex justify-content-center">
+                                                <button class="btn btn-primary" type="submit" >Ajouter</button>
+                                            </div>
+                                            
+                                           
+                                           
+                                           
+                                            <!--end col-->
+                                        </div>
+                                      </form>
+                                        <!--end row-->
+                                    </div>
+                                    <div class="d-none code-view">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+
+                 
+                    <!--end row-->
+
+
+                </div> <!-- container-fluid -->
+            </div><!-- End Page-content -->
+
+            <app-footer></app-footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+   
+
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting d-none d-md-block">
+        <div class="btn-info rounded-pill shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+            <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
+        </div>
+    </div>
+
+    <!-- Theme Settings -->
+   
+
+    <!-- JAVASCRIPT -->
+   
+
+</body>
+
+
+</html>
