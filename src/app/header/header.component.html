@@ -57,7 +57,7 @@
                 <div class="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
                     <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                         <i class='bx bx-bell fs-22'></i>
-                        <span *ngIf="totalContacts > 0" class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">5</span>
+                        <span  class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">5</span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown" >
 
@@ -77,7 +77,7 @@
                                 <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true" id="notificationItemsTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab" role="tab" aria-selected="true">
-                                            Tout ({{totalContacts}})
+                                            Tout 22
                                         </a>
                                     </li>
                                 </ul>
@@ -88,7 +88,7 @@
                         <div class="tab-content position-relative" id="notificationItemsTabContent">
                             <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab" role="tabpanel">
                                 <div data-simplebar style="max-height: 300px;" class="pe-2">
-                                    <div class="text-reset notification-item d-block dropdown-item position-relative" *ngFor="let contact of getLastFiveContacts()">
+                                    <div class="text-reset notification-item d-block dropdown-item position-relative" >
                                         <div class="d-flex">
                                             <div class="avatar-xs me-3 flex-shrink-0">
                                                 <span class="avatar-title bg-info-subtle text-info rounded-circle fs-16">
@@ -96,11 +96,11 @@
                                                 </span>
                                             </div>
                                             <div class="flex-grow-1" >         
-                                                    <h6 class="nom">{{contact.nom}}</h6>
-                                                    <h6>{{contact.email}}
+                                                    <h6 class="nom">rayen</h6>
+                                                    <h6>gmail
                                                     </h6>
                                                 <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                    <span> {{contact.message}}</span>
+                                                    <span> message</span>
                                                 </p>
                                             </div>
                                             <div class="px-2 fs-15">
@@ -130,16 +130,16 @@
                         <span class="d-flex align-items-center">
                             <img class="rounded-circle header-profile-user" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Header Avatar">
                             <span class="text-start ms-xl-2">
-                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{this.userDetails.nom}} {{this.userDetails.prenom}}</span>
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">nom preonom</span>
                                 <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Administrateur</span>
                             </span>
                         </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
-                        <h6 class="dropdown-header">Bienvenue {{this.userDetails.prenom}}!</h6>
+                        <h6 class="dropdown-header">Bienvenue prenom !</h6>
                         <a class="dropdown-item" href="profile"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
-                        <a class="dropdown-item" (click)="logout()" style="cursor: pointer;"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Deconnexion</span></a>
+                        <a class="dropdown-item"  style="cursor: pointer;"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Deconnexion</span></a>
                     </div>
                 </div>
             </div>

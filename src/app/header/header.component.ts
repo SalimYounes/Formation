@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudserviceService } from '../service/crudservice.service';
-import { Contact } from '../Entité/Contact.module';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +8,7 @@ import { Contact } from '../Entité/Contact.module';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  /*
   header:Contact[];
   totalContacts:number=0;
   userDetails:any;
@@ -48,6 +48,6 @@ export class HeaderComponent {
     }
   }
   
-  
+  */
 
 }

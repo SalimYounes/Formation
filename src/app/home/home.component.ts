@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudserviceService } from '../service/crudservice.service';
-import { Client } from '../Entité/Client.module';
-import { Coach } from '../Entité/Coach.module';
-import { SalleDeSport } from '../Entité/SalleDeSport.module';
 import { Chart } from 'chart.js/auto';
-import { Abonnement } from '../Entité/Abonnement.module';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +8,10 @@ import { Abonnement } from '../Entité/Abonnement.module';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  totalAdmins:number=0;
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+ /* totalAdmins:number=0;
   totalClients:number=0;
   totalCoachs:number=0;
   totalSalles:number=0;
@@ -250,6 +249,6 @@ updateTopMembershipChart() {
   });
 }
 
-  
+ */ 
 
 }

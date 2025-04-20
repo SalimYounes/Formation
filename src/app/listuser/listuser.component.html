@@ -92,25 +92,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let user of listUser |paginate:{itemsPerPage:10,currentPage:p}">
+                                            <tr *ngFor="let user of listUser | paginate:{itemsPerPage:10, currentPage:p}">
                                                 <th scope="row">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
-                                                    </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
+                                                  </div>
                                                 </th>
                                                 <td>{{user.id}}</td>
                                                 <td>{{user.nom}}</td>
                                                 <td>{{user.prenom}}</td>
                                                 <td>{{user.email}}</td>
-                                                <td>{{user.role}}</td>
-                                                
+                                                <td></td> <!-- ✅ Affiche le nom du rôle -->
                                                 <td>
-                                                    <div class="btn-container">
-                                                        <a href="modifieruser/{{user.id}}" type="submit" class="custom-btn success">Modifier</a>
-                                                        <button type="submit" class="custom-btn danger" (click)=" Deleteuser(user)">Supprimer</button>
-                                                      </div>
+                                                  <div class="btn-container">
+                                                    <a [routerLink]="['/modifieruser', user.id]" type="button" class="custom-btn success">Modifier</a>
+                                                    <button type="button" class="custom-btn danger" (click)="Deleteuser(user)">Supprimer</button>
+                                                  </div>
                                                 </td>
-                                            </tr>
+                                              </tr>
+                                              
                                        
                                         </tbody>
                                     </table>
